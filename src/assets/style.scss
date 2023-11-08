@@ -1,0 +1,19 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+.pointer {
+  cursor: pointer;
+}
+
+.fixed {
+  position: fixed;;
+}
+
+@font-face {
+  font-family: "AcornFont";
+  src: url('~@/assets/AcornFont/Acorn-Regular.ttf'); // Using a Webpack alias
+}
+
+@font-face {
+  font-family: "GTPlanar";
+  src: url('~@/assets/GTPlanar/GT-Planar-Regular-Trial-BF63bcd9a5c44bb.otf');
+}
