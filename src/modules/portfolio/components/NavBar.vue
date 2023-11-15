@@ -14,7 +14,7 @@
     </ul>
   </nav>
   <!-- Im going to create a dayNight button -->
-  <!-- <button @click="dayNightChange()">Day/Night</button> -->
+  <button @click="dayNightChange()">{{ $t('dia_noche')}}</button>
 
 </header>
 </template>
@@ -42,10 +42,10 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   computed: {
-    ...mapState('portfolio', ['dayNight'])
+    ...mapState('portfolio', ['dayNight', 'lang'])
   },
   methods: {
-    ...mapActions('portfolio', ['updateEntry']),
+    ...mapActions('portfolio', ['updateDayNight']),
 
     handleScroll() {
       if (window.scrollY > 50) { // Cambia 100 por la posición de desplazamiento deseada
@@ -56,7 +56,7 @@ export default {
     },
     dayNightChange() {
       // Como ya tenemos el valor en el store, solo tenemos que cambiarlo
-      this.updateEntry({ dayNight: this.dayNight })
+      this.updateDayNight({ dayNight: this.dayNight })
     }
 
   },

@@ -137,7 +137,7 @@ export default {
 
             if (this.entry.id) {
                 // Actualizar
-                await this.updateEntry(this.entry)
+                await this.updateDayNight(this.entry)
             } else {
                 // Crear una nueva entrada
                 const id = await this.createEntry(this.entry)
