@@ -17,7 +17,7 @@ function loadLocaleMessages () {
   return messages
 }
 export default new createI18n({
-  locale: 'es',
+  locale: localStorage.getItem('locale'),
   fallbackLocale: 'en',
   messages: loadLocaleMessages(),
 })

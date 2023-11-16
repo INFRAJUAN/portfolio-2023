@@ -1,17 +1,6 @@
 <template>
   <div class="ocean">
     <div class="wave"></div>
-    <div class="text-right"> 
-      <!-- <button class="" @click="setLocalToSpanish()"></button>
-      <button class="" @click="setLocalToEnglish()"></button> -->
-      <!-- Insert two clickable images -->
-      <img :src="spainFlag" alt="Spain" @click="setLocalToSpanish()" class="max-size-img pt-3 mr-2"/>
-      <img :src="ukFlag" alt="United-Kingdom" @click="setLocalToEnglish()" class="max-size-img pt-3 mr-5 "/>
-      <!-- Make it with favicon icons -->
-      <template>
-        <gb-flag code="fr" />
-      </template>
-    </div>
   </div>
     <NavBar/>
     <router-view/>
@@ -19,33 +8,19 @@
 </template>
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapActions, mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      spainFlag: require("@/assets/spain_flag.svg"),
-      ukFlag: require("@/assets/english_flag.svg"),
-    }
-  },
   components: {
         NavBar: defineAsyncComponent(() => import('@/modules/portfolio/components/NavBar.vue')),
         Footers: defineAsyncComponent(() => import('@/modules/portfolio/components/Footers.vue'))
 
   },
-  computed: {
-    ...mapState('portfolio', ['lang'])
-  },
-  methods: {
-    ...mapActions('portfolio', ['updateLang']),
-
-    setLocalToSpanish() {
-      this.$i18n.locale = 'es'
-      this.updateLang({ lang: this.$i18n.locale })
-    },
-    setLocalToEnglish() {
-      this.$i18n.locale = 'en'
-      this.updateLang({ lang: this.$i18n.locale })
+  watch: {
+    '$i18n.locale': {
+      handler: function (newLocale) {
+        localStorage.setItem('locale', newLocale)
+      },
+      immediate: true
     }
   }
 }
