@@ -42,7 +42,7 @@
       <p class="font-weight-bold techstack-h1">The techstack</p>
       <p>I'm most familiar with these — more being added</p>
       <v-slide-group
-        class=""
+        class="pb-2"
         v-model="model"
         center-active
         show-arrows
@@ -249,8 +249,10 @@ h1 {
 .time-line-container {
   //I want to move the content to the right of the div
   position: relative;
-   margin-left: 15%;
+  //  margin-left: 15%;
    align-content: center;
+   //Set margin auto only horizontally
+    margin: auto;
 }
 .b-bottom-container{
   height: 2px;

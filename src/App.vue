@@ -8,12 +8,21 @@
 </template>
 <script>
 import { defineAsyncComponent } from 'vue'
+
 export default {
   components: {
         NavBar: defineAsyncComponent(() => import('@/modules/portfolio/components/NavBar.vue')),
         Footers: defineAsyncComponent(() => import('@/modules/portfolio/components/Footers.vue'))
 
-    },
+  },
+  watch: {
+    '$i18n.locale': {
+      handler: function (newLocale) {
+        localStorage.setItem('locale', newLocale)
+      },
+      immediate: true
+    }
+  }
 }
 </script>
 
@@ -95,6 +104,13 @@ body {
   background-color: #ebe3db;
   color: #125f52;
   //Family font
-
+}
+.max-size-img {
+  width: 20px;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 </style>

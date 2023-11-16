@@ -8,6 +8,11 @@ export const getDayNight = (state) => {
     return state.dayNight
 }
 
+export const setLang = (state) => {
+    console.log('Getters', state.lang)
+    return state.lang
+}
+
 // export const getEntriesByTerm = (state) => (term = '') => {
 //     if (term.length === 0) return state.entries
 

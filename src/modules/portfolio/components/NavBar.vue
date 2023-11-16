@@ -12,9 +12,11 @@
         </router-link>
       </li>
     </ul>
+    <div class="flags">
+      <img :src="spainFlag" alt="Spain" @click="setLocalToSpanish()" class="max-size-img mr-2"/>
+      <img :src="ukFlag" alt="United-Kingdom" @click="setLocalToEnglish()" class="max-size-img  "/>
+    </div>
   </nav>
-  <!-- Im going to create a dayNight button -->
-  <!-- <button @click="dayNightChange()">Day/Night</button> -->
 
 </header>
 </template>
@@ -31,7 +33,9 @@ export default {
         { name: 'contact', path: '/contact', text: 'Contact' },
         // { name: 'impossible-list', path: '/list', text: 'List' }
       ],
-      isScrolled: false
+      isScrolled: false,
+      spainFlag: require("@/assets/spain_flag.svg"),
+      ukFlag: require("@/assets/english_flag.svg"),
     };
   },
   created() {
@@ -45,7 +49,7 @@ export default {
     ...mapState('portfolio', ['dayNight'])
   },
   methods: {
-    ...mapActions('portfolio', ['updateEntry']),
+    ...mapActions('portfolio', ['updateEntry', 'updateLang']),
 
     handleScroll() {
       if (window.scrollY > 50) { // Cambia 100 por la posición de desplazamiento deseada
@@ -56,7 +60,15 @@ export default {
     },
     dayNightChange() {
       // Como ya tenemos el valor en el store, solo tenemos que cambiarlo
-      this.updateEntry({ dayNight: this.dayNight })
+      this.updateDay({ dayNight: this.dayNight })
+    },
+    setLocalToSpanish() {
+      this.$i18n.locale = 'es'
+      this.updateLang({ lang: this.$i18n.locale })
+    },
+    setLocalToEnglish() {
+      this.$i18n.locale = 'en'
+      this.updateLang({ lang: this.$i18n.locale })
     }
 
   },
@@ -66,6 +78,10 @@ export default {
 <style lang="scss" scoped>
 a {
   color: inherit;
+}
+.flags {
+  position: absolute;
+  right: 0px;
 }
 .sticky-top {
   position: sticky;
@@ -99,7 +115,7 @@ nav.nav-boxing {
   display: flex;  
   justify-content: center;
   align-items: center;
-  max-width: 1600px;
+  max-width: 600px;
   margin: 26px auto 0;
   position: relative;
   z-index: 1010;

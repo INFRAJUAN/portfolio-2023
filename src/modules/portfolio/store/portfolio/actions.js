@@ -24,18 +24,22 @@ export const loadEntries = async ({ commit }) => {
     commit('setEntries', true)
 }
 
-export const updateEntry = async ({ commit }, isDay) => { // entry debe de ser un parámetro
+export const updateDayNight = async ({ commit }, isDay) => { // entry debe de ser un parámetro
     // const { date, picture, text } = entry
     // const dataToSave = { date, picture, text }
 
     // const resp = await portfolioApi.put(`/entries/${entry.id}.json`, dataToSave)
     // console.log(resp)
 
-    // // Commit de una mutation -> updateEntry
-    // commit('updateEntry', { ...entry })
+    // // Commit de una mutation -> updateDayNight
+    // commit('updateDayNight', { ...entry })
 
     //isDay is just a true/false
-    commit('updateEntry', isDay)
+    commit('updateDayNight', isDay)
+}
+
+export const updateLang = async ({ commit }, lang) => {
+    commit('updateLang', lang)
 }
 
 // export const createEntry = async ({ commit }, entry) => {
