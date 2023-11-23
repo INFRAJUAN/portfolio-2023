@@ -3,16 +3,16 @@
     <div class="content d-flex">
       <div>
         <h1>
-          <span>Hi, my 
+          <span>{{ $t('about.main.hi_my') }}
             <img class="star" :src="imageUrl">
           </span>
-          <span><br> name is <b class="dot">Joan</b>.</span>
+          <span><br> {{ $t('about.main.name_is') }}<b class="dot">{{ $t('about.main.name') }}</b>.</span>
         </h1>
-        <p class="description">I'm a <b class="dot">front-end developer</b> from <br>Spain, Catalonia.</p>
+        <p class="description">{{ $t('about.main.im_a') }} <b class="dot">{{ $t('about.main.front_developer') }}</b> {{ $t('about.main.from') }} <br>{{ $t('about.main.location') }}</p>
       </div>
-      <div class="time-line-container">
+      <div class="time-line-container" :class="{ 'collapsed': !expand }">
         <span @click="expand = !expand" class="btn-arrow mdi mdi-menu-down"></span>
-        <v-expand-transition class="">
+        <!-- <v-expand-transition class="">
           <div v-show="expand">
             <div class="patern"></div>
             <v-timeline align="start">
@@ -27,20 +27,20 @@
                 </v-timeline-item>
             </v-timeline>
           </div>
-        </v-expand-transition>
+        </v-expand-transition> -->
       </div>
     </div>
     <div class="b-bottom-container"></div>
     <div class="content about">
-      <p class=""> 01. <span class="about-size font-weight-medium dot">About me.</span> </p>
+      <p class=""> 01. <span class="about-size font-weight-medium dot">{{ $t('about.about_me.about_me') }}</span> </p>
       <div class="small-line"></div>
-      <p class="font-weight-light"><span class="font-weight-medium dot">Hi there! I'm Joan, a web dev.</span> (as you might have guessed with the title)</p>
-      <p class="font-italic">Growing up, I always had an affinity for everything tech-related. Building my own computers and fixing them, video editing, and setting up local servers were some of the activities that developed my problem-solving skills.</p>
-      <p class="font-weight-medium dot">Today I'm enthralled by web development. Creating new experiences, implementing eye pleasing designs and making them work is what I like to do.</p>
+      <p class="font-weight-light"><span class="font-weight-medium dot">{{ $t('about.about_me.hi_there') }}</span> {{ $t('about.about_me.guessed') }}</p>
+      <p class="font-italic">{{ $t('about.about_me.growing_up') }}</p>
+      <p class="font-weight-medium dot">{{ $t('about.about_me.new_experiences') }}</p>
     </div>
     <div class="techstack">
-      <p class="font-weight-bold techstack-h1">The techstack</p>
-      <p>I'm most familiar with these — more being added</p>
+      <p class="font-weight-bold techstack-h1">{{ $t('about.techstack.techstack') }}</p>
+      <p>{{ $t('about.techstack.familiar_these') }}</p>
       <v-slide-group
         class="pb-2"
         v-model="model"
@@ -71,11 +71,11 @@
       </v-slide-group>
     </div>
     <div class="content about">
-      <p class=""> 02. <span class="about-size font-weight-medium dot">Experience.</span> </p>
+      <p class=""> 02. <span class="about-size font-weight-medium dot">{{ $t('about.experience.experience') }}</span> </p>
       <div class="small-line"></div>
       <br>
-      <p>In my <b class="dot">first year</b> as a web developer, I've worked on diverse projects, including collaborations <br> with <b class="dot">BBVA</b> during my time at <b class="dot">Accenture</b>. <br></p>
-      <p class="dot font-weight-medium">This experience enhanced my skills and deepened my passion for web development. I'm now continuing this journey, contributing to impactful projects and furthering my expertise.</p>
+      <p>{{ $t('about.experience.in_my') }} <b class="dot">{{ $t('about.experience.first_year') }}</b> {{ $t('about.experience.as_webdeveloper') }} {{ $t('about.experience.with') }}<b class="dot"> {{ $t('about.experience.bbva') }}</b> {{ $t('about.experience.during_time') }} <b class="dot">{{ $t('accenture') }}</b>. <br></p>
+      <p class="dot font-weight-medium">{{ $t('about.experience.enchanced_experience') }}</p>
     </div>
   </div>
 </template>
@@ -182,6 +182,11 @@ h1 {
   position: relative; /* Add this to make "patern" relative to its container */
 }
 
+// .about {
+//   font-family: Arial, sans-serif;
+//   font-weight: 600;
+//   // font-size: 400px;
+// }
 .patern {
   /* Set the background size, position, and repeat pattern as needed */
   width: 52px; /* Full width of the container */
@@ -261,4 +266,7 @@ h1 {
   margin-top: 5%;
   border-bottom: #125f524d 2px solid;
 }
+// .collapsed {
+//   top: 0;
+// }
 </style>

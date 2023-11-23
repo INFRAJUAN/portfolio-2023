@@ -1,3 +1,35 @@
 {
-    "dia_noche":"Day / Night"
+    "accenture": "Accenture",
+    "about": {
+        "main": {
+            "hi_my": "Hi, my",
+            "name_is": "name is",
+            "name": "Joan",
+            "im_a": "I'm a",
+            "front_developer": "front-end developer",
+            "from": "from",
+            "location": "Spain, Catalonia"
+        },
+        "about_me": {
+            "about_me": "About me.",
+            "hi_there": "Hi there! I'm Joan, a web dev.",
+            "guessed": "(as you might have guessed with the title)",
+            "growing_up": "Growing up, I always had an affinity for everything tech-related. Building my own computers and fixing them, video editing, and setting up local servers were some of the activities that developed my problem-solving skills.",
+            "new_experiences": "Today I'm enthralled by web development. Creating new experiences, implementing eye pleasing designs and making them work is what I like to do."
+        },
+        "techstack": {
+            "techstack": "The techstack",
+            "familiar_these": "I'm most familiar with these — more being added"
+        },
+        "experience": {
+            "experience": "Experience.",
+            "in_my": "In my",
+            "first_year": "first year",
+            "as_webdeveloper": "as a web developer, I've worked on diverse projects, including collaborations",
+            "with": "with",
+            "bbva": " BBVA",
+            "during_time": "during my time at",
+            "enchanced_experience": "This experience enhanced my skills and deepened my passion for web development. I'm now continuing this journey, contributing to impactful projects and furthering my expertise."
+        }
+    }
 }

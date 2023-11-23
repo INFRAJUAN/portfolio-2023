@@ -18,6 +18,6 @@ function loadLocaleMessages () {
 }
 export default new createI18n({
   locale: localStorage.getItem('locale'),
-  fallbackLocale: 'en',
+  fallbackLocale: 'es',
   messages: loadLocaleMessages(),
 })

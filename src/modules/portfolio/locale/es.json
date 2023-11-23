@@ -1,3 +1,35 @@
 {
-    "dia_noche":"Dia / Noche"
+    "accenture": "Accenture",
+    "about": {
+        "main": {
+            "hi_my": "Holaa! mi",
+            "name_is": "nombre es",
+            "name": " Joan",
+            "im_a": "Soy un",
+            "front_developer": "desarrollador front-end",
+            "from": "ubicado en",
+            "location": "España, Cataluña"
+        },
+        "about_me": {
+            "about_me": "Sobre mi.",
+            "hi_there": "Hola! Soy Joan, un desarrollador web.",
+            "guessed": "(como podrás haber adivinado con el título)",
+            "growing_up": "Desde pequeño siempre he tenido una afinidad por todo lo relacionado con la tecnología. Construir mis propios ordenadores y arreglarlos, editar vídeos y configurar servidores locales fueron algunas de las actividades que desarrollaron mis habilidades para resolver problemas.",
+            "new_experiences": "Hoy en día estoy fascinado por el desarrollo web. Crear nuevas experiencias, implementar diseños agradables a la vista y hacer que funcionen es lo que me gusta hacer."
+        },
+        "techstack": {
+            "techstack": "El stack tecnológico",
+            "familiar_these": "Estoy más familiarizado con estos - se añadirán más"
+        },
+        "experience": {
+            "experience": "Experiencia.",
+            "in_my": "En mi",
+            "first_year": "primer año",
+            "as_webdeveloper": "como desarrollador web, he trabajado en diversos proyectos, incluyendo colaboraciones",
+            "with": "con",
+            "bbva": " BBVA",
+            "during_time": "durante mi tiempo en",
+            "enchanced_experience": "Esta experiencia mejoró mis habilidades y profundizó mi pasión por el desarrollo web. Ahora estoy continuando este viaje, contribuyendo a proyectos impactantes y profundizando mi experiencia."
+        }
+    }
 }
