@@ -76,6 +76,35 @@
       <br>
       <p>{{ $t('about.experience.in_my') }} <b class="dot">{{ $t('about.experience.first_year') }}</b> {{ $t('about.experience.as_webdeveloper') }} {{ $t('about.experience.with') }}<b class="dot"> {{ $t('about.experience.bbva') }}</b> {{ $t('about.experience.during_time') }} <b class="dot">{{ $t('accenture') }}</b>. <br></p>
       <p class="dot font-weight-medium">{{ $t('about.experience.enchanced_experience') }}</p>
+      <div class="d-flex">
+        <v-container>
+          <v-row align="center" justify="center">
+            <v-col v-for="items in work_experience" :key="items.title" cols="6">
+              <v-card class="mx-auto about_cards pointer" color="#f4eee6">
+                <v-card-item class="d-flex flex-column justify-content-between card-item">
+                  <div class="text-h6 mb-1 d-flex justify-content-between">
+                    <div class="d-flex">
+                      <v-img :src="items.work === 'Full Stack' ? fullstack_icon : frontend_icon" class="work-img"></v-img>
+                      <div class="ml-4 mt-2">
+                        {{ items.title }}
+                        <div class="mt-2 font-weight-light work_description" style="font-size: 0.9rem;">
+                          {{ items.description }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <span class="text-overline">{{ items.duration }}</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 text-overline work_description work_bottom">
+                    {{ items.work }}
+                  </div>
+                </v-card-item>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </div>
   </div>
 </template>
@@ -85,6 +114,8 @@ export default {
   data() {
     return {
       imageUrl: require("@/assets/star-100s-200px.svg"),
+      fullstack_icon: require("@/assets/fullstack_icon.svg"),
+      frontend_icon: require("@/assets/frontend_icon.svg"),
       expand: false,
       model: 0,
       contactItems: [ 
@@ -110,6 +141,12 @@ export default {
         { name: 'JEST', img: require("@/assets/jest-logo.png") },
         { name: 'QUASAR', img: require("@/assets/quasar-logo.png") },
         { name: 'GIT', img: require("@/assets/git-logo.png") },
+      ],
+      work_experience: [
+        { id:"management_limits", title: "Management Limits", work: "Front-End", duration: "4 month", description: "Crafted user-friendly interfaces and functionalities. I’ve been working exclusive as a front-end developer."},
+        { id:"non_financial_risks", title: "Non-Financial Risks", work: "Full Stack", duration: "4 month", description: "" },
+        { id:"data_protection", title: "Data Protection", work: "Full Stack", duration: "2 month", description: "Ayudando a crear user-firendly interfaces y librerías varias. (html2pdf)" },
+        { id:"working_groups", title: "Working Groups", work: "Full Stack", duration: "2 month", description: "" }
       ]
     };
   },
@@ -266,7 +303,34 @@ h1 {
   margin-top: 5%;
   border-bottom: #125f524d 2px solid;
 }
-// .collapsed {
-//   top: 0;
-// }
+.about_cards {
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  padding: 10px 10px 0px 10px;
+
+}
+.work_description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  width: 217.5px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.work_bottom {
+  bottom: 0;
+}
+
+.card-item {
+  height: 100%;
+}
+
+.work-img {
+  width: 50px;
+  height: 50px;
+}
 </style>
